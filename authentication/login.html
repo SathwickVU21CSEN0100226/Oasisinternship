@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+	body {
+         
+        background-image: url('login.jpg'); /* Path of image */
+        background-size: cover;  
+        background-position: center;  
+        background-repeat: no-repeat;  
+    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: rgb(11, 11, 11);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; 
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        <script>
+            function validateLoginForm() {
+                var username = document.forms["loginForm"]["username"].value;
+                var password = document.forms["loginForm"]["password"].value;
+
+                if (username === "" || password === "") {
+                    alert("Both username and password are required");
+                return false;
+            }
+            // You can add more complex validations if needed
+            return true;
+        }
+         </script>   
+        
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login Page</h2>
+        <form action="/submit-your-login-form" method="post">
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <input type="submit" value="Login">
+	    <input type="button" value="Register" onclick="window.location.href='register.html';">
+
+        </form>
+    </div>
+
+</body>
+</html>
